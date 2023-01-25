@@ -298,12 +298,7 @@ func comprs(a [8]string, ar [64]string, c [64]string) string {
 	return d
 
 }
-
-func main() {
-	//var i string
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	i := scanner.Text()
+func Sha256(i string) string {
 
 	var a1 [8]string
 	for k := 0; k < 8; k++ {
@@ -330,6 +325,16 @@ func main() {
 	a = modify(a)
 	e := comprs(a1, k1, a)
 
+	return e
+
+}
+
+func main() {
+	//var i string
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	i := scanner.Text()
+	e := Sha256(i)
 	//fmt.Println(len(b))
 	fmt.Println(e)
 }
